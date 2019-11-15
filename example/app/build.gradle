@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId "net.richflyer.app"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+configurations {
+    stagingDebugCompile
+    stagingReleaseCompile
+    productionDebugCompile
+    productionReleaseCompile
+}
+
+dependencies {
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation fileTree(include: '*.jar', exclude: 'annotations.jar', dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
+
+
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'com.google.firebase:firebase-core:17.2.1'
+    implementation 'com.google.firebase:firebase-messaging:20.0.0'
+    implementation 'jp.co.infocity:RichFlyerEvent:1.0.4'
+    implementation 'jp.co.infocity:RichFlyer:1.0.31'
+
+}
+
+repositories{
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+apply plugin: 'com.google.gms.google-services'

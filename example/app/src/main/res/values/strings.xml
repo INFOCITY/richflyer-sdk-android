@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">RichFlyer</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="commit">登録</string>
+
+    <string name="spinner_text_genre">該当ジャンルの本を最も多く所有しているユーザ</string>
+    <string name="spinner_text_day">起動が多い曜日</string>
+    <string name="spinner_text_launch_count">起動回数</string>
+    <string name="spinner_text_daytime">起動の多い時間帯</string>
+
+    <string-array name="spinner_list_genre">
+        <item>comic</item>
+        <item>magazine</item>
+        <item>novel</item>
+    </string-array>
+
+    <string-array name="spinner_list_day">
+        <item>月</item>
+        <item>火</item>
+        <item>水</item>
+        <item>木</item>
+        <item>金</item>
+        <item>土</item>
+        <item>日</item>
+    </string-array>
+    <string-array name="spinner_list_launch_count">
+        <item>0-100</item>
+        <item>101-1000</item>
+        <item>1001-5000</item>
+        <item>5001-10000</item>
+    </string-array>
+    <string-array name="spinner_list_daytime">
+        <item>朝</item>
+        <item>昼</item>
+        <item>晩</item>
+        <item>深夜</item>
+    </string-array>
+
+    <string name="event_title_open_store">ストアを開く</string>
+    <string name="event_title_open_recommend">オススメ画面を開く</string>
+    <string name="event_title_add_wish_list">ほしいものリスト追加</string>
+    <string name="event_title_add_cart">カート追加</string>
+    <string name="event_title_purchase">購入</string>
+
+    <string name="notification_title_open_store">ストアを開く</string>
+    <string name="notification_title_open_recommend">オススメ画面を開く</string>
+    <string name="notification_title_add_wish_list">ほしいものリスト追加</string>
+    <string name="notification_title_open_item_detail_page">商品詳細ページを開く</string>
+    <string name="notification_title_open_feature_page">特集ページを開く</string>
+    <string name="notification_title_open_web_page">案内ページを開く</string>
+
+    <string name="recieve_recently">表示する</string>
+</resources>
