@@ -49,8 +49,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'com.google.firebase:firebase-core:17.2.1'
     implementation 'com.google.firebase:firebase-messaging:20.0.0'
-    implementation 'jp.co.infocity:RichFlyerEvent:1.0.4'
-    implementation 'jp.co.infocity:RichFlyer:1.0.31'
+    implementation 'jp.co.infocity:RichFlyerEvent:1.1.0'
+    implementation 'jp.co.infocity:RichFlyer:1.1.0'
 
 }
 
