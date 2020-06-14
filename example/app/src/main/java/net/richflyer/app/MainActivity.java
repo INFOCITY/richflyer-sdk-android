@@ -25,10 +25,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import jp.co.infocity.richflyer.RichFlyer;
-import jp.co.infocity.richflyer.RichFlyerListener;
+import jp.co.infocity.richflyer.RichFlyerResultListener;
 import jp.co.infocity.richflyer.action.RFAction;
 import jp.co.infocity.richflyer.action.RFActionListener;
 import jp.co.infocity.richflyer.history.RFContent;
+import jp.co.infocity.richflyer.util.RFResult;
 
 /**
  * Copyright © 2019 INFOCITY, Inc. All rights reserved.
@@ -129,10 +130,10 @@ public class MainActivity extends AppCompatActivity {
         RichFlyer flyer = new RichFlyer(getApplicationContext(), token, mServiceKey,
                 getString(R.color.themaColor1), MainActivity.class);
 
-        flyer.startSetting(new RichFlyerListener() {
+        flyer.startSetting(new RichFlyerResultListener() {
             @Override
-            public void onCompleted(boolean result) {
-                if (result) {
+            public void onCompleted(RFResult result) {
+                if (result.isResult()) {
                     Log.d("RichFlyer", "RichFlyer初期化成功");
                 } else {
                     Log.d("RichFlyer", "RichFlyer初期化失敗");
@@ -194,10 +195,10 @@ public class MainActivity extends AppCompatActivity {
                     param.put(key, segments.get(key));
                 }
                 System.out.println("********* / " + segments);
-                RichFlyer.registerSegments(param, getApplicationContext(), new RichFlyerListener() {
+                RichFlyer.registerSegments(param, getApplicationContext(), new RichFlyerResultListener() {
                     @Override
-                    public void onCompleted(boolean result) {
-                        if (result) {
+                    public void onCompleted(RFResult result) {
+                        if (result.isResult()) {
                             showMessage(v, "Segmentを" + segments + "の内容で登録しました。");
                         } else {
                             showMessage(v, "Segment登録が失敗しました。");

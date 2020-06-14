@@ -15,7 +15,8 @@ import java.util.Map;
 
 import jp.co.infocity.richflyer.RFSendPushInformation;
 import jp.co.infocity.richflyer.RichFlyer;
-import jp.co.infocity.richflyer.RichFlyerListener;
+import jp.co.infocity.richflyer.RichFlyerResultListener;
+import jp.co.infocity.richflyer.util.RFResult;
 
 //FirebaseMessagingServiceを継承し、通知を受信する
 public class FirebaseMessagingServiceBase extends FirebaseMessagingService {
@@ -37,10 +38,10 @@ public class FirebaseMessagingServiceBase extends FirebaseMessagingService {
         Log.d("### refreshToken ##", s);
 
         RichFlyer richFlyer = new RichFlyer(getApplicationContext());
-        richFlyer.tokenRefresh(s, new RichFlyerListener() {
+        richFlyer.tokenRefresh(s, new RichFlyerResultListener() {
             @Override
-            public void onCompleted(boolean result) {
-                if (result) {
+            public void onCompleted(RFResult result) {
+                if (result.isResult()) {
                     Log.d("RichFlyer", "Refresh Token成功");
                 } else {
                     Log.d("RichFlyer", "Refresh Token失敗");

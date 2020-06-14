@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
 
-    compileSdkVersion 28
+    compileSdkVersion 29
     buildToolsVersion '28.0.3'
 
     compileOptions{
@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId "net.richflyer.app"
         minSdkVersion 23
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -50,7 +50,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.2.1'
     implementation 'com.google.firebase:firebase-messaging:20.0.0'
     implementation 'jp.co.infocity:RichFlyerEvent:1.1.0'
-    implementation 'jp.co.infocity:RichFlyer:1.1.1'
+    implementation 'jp.co.infocity:RichFlyer:1.1.9'
 
 }
 
