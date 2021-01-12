@@ -50,7 +50,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.2.1'
     implementation 'com.google.firebase:firebase-messaging:20.0.0'
     implementation 'jp.co.infocity:RichFlyerEvent:1.1.0'
-    implementation 'jp.co.infocity:RichFlyer:1.2.'
+    implementation 'jp.co.infocity:RichFlyer:1.2.10'
 
 }
 
