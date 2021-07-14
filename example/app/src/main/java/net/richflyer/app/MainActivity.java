@@ -15,10 +15,8 @@ import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -97,17 +95,16 @@ public class MainActivity extends AppCompatActivity {
         initRecieve();
 
 
-        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(new OnSuccessListener<InstanceIdResult>() {
-            @Override
-            public void onSuccess(InstanceIdResult instanceIdResult) {
-                String token = instanceIdResult.getToken();
-                Log.d("RichFlyer", "**** / " + token);
-
-                initializeRichFlyer(token);
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
+            if (!task.isSuccessful()) {
+                return;
             }
+            String token = task.getResult();
+
+            Log.d("RichFlyer", "**** / " + token);
+
+            initializeRichFlyer(token);
         });
-
-
 
 
         if (RichFlyer.richFlyerAction(getIntent())) {
