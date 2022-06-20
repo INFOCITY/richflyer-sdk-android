@@ -87,13 +87,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.conenection_tab_layout);
 
-        // TabHostの初期化および設定処理
         initTabs();
 
         initSegments();
 
         initRecieve();
-
 
         FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
             if (!task.isSuccessful()) {
@@ -111,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
             RichFlyer.parseAction(getIntent(), new RFActionListener() {
                 @Override
                 public void onRFEventOnClickButton(@NonNull RFAction action, @NonNull String index) {
-
                     Log.d("richflyer", "ボタンが押された");
                 }
 
@@ -172,7 +169,6 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Segment登録画面
      */
-
     protected void initSegments(){
 
         segments = new HashMap<>();
@@ -209,7 +205,6 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 履歴画面
      */
-
     protected void initRecieve(){
 
         Button recieve = (Button) findViewById(R.id.recieve_button);

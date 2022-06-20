@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_margin="10dp"
-        android:background="@color/colorOrigin" />
+        android:background="@color/colorPrimary" />
 
     <TextView
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_margin="10dp"
-        android:background="@color/colorOrigin" />
+        android:background="@color/colorPrimary" />
 
     <TextView
         android:layout_width="match_parent"
@@ -65,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_margin="10dp"
-        android:background="@color/colorOrigin" />
+        android:background="@color/colorPrimary" />
 
     <TextView
         android:layout_width="match_parent"
@@ -85,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_margin="10dp"
-        android:background="@color/colorOrigin" />
+        android:background="@color/colorPrimary" />
 
     <Button
         android:id="@+id/segment_register"

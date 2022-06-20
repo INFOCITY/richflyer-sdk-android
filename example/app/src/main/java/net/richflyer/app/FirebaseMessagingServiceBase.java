@@ -18,15 +18,16 @@ import jp.co.infocity.richflyer.RichFlyer;
 import jp.co.infocity.richflyer.RichFlyerResultListener;
 import jp.co.infocity.richflyer.util.RFResult;
 
-//FirebaseMessagingServiceを継承し、通知を受信する
 public class FirebaseMessagingServiceBase extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
+        // プッシュ通知を受信
         super.onMessageReceived(remoteMessage);
 
-        //受信した情報をライブラリ側に渡す
         Map<String, String> data = remoteMessage.getData();
+
+        // 通知ドロワーに表示
         RFSendPushInformation spi = new RFSendPushInformation(this, R.mipmap.ic_launcher);
         spi.setPushData(remoteMessage.getData());
     }
