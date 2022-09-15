@@ -121,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeRichFlyer(String token) {
+        RichFlyer.checkNotificationPermission(this);
+
         RichFlyer flyer = new RichFlyer(getApplicationContext(), token, mServiceKey,
                 getString(R.color.themaColor1), MainActivity.class);
 
