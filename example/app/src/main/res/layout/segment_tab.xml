@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="@string/spinner_text_launch_count" />
+        android:text="@string/spinner_text_age" />
 
     <Spinner
         android:id="@+id/segment_spinner_launch_count"
@@ -71,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="@string/spinner_text_daytime" />
+        android:text="@string/spinner_text_registered" />
 
     <Spinner
         android:id="@+id/segment_spinner_day_time"

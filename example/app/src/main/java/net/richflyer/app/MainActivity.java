@@ -19,6 +19,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
     enum SegmentParameter {
         genre,
         day,
-        launchCount,
-        dayTime;
+        age,
+        registered;
 
         @IdRes int getSpinnerId() {
             switch (this) {
@@ -53,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
                     return R.id.segment_spinner_genre;
                 case day:
                     return R.id.segment_spinner_day;
-                case launchCount:
+                case age:
                     return R.id.segment_spinner_launch_count;
-                case dayTime:
+                case registered:
                     return R.id.segment_spinner_day_time;
                 default:
                     return -1;
@@ -69,17 +70,17 @@ public class MainActivity extends AppCompatActivity {
                     return R.array.spinner_list_genre;
                 case day:
                     return R.array.spinner_list_day;
-                case launchCount:
-                    return R.array.spinner_list_launch_count;
-                case dayTime:
-                    return R.array.spinner_list_daytime;
+                case age:
+                    return R.array.spinner_list_age;
+                case registered:
+                    return R.array.spinner_list_registered;
                 default:
                     return -1;
             }
         }
     }
 
-    private HashMap<String, String> segments;
+    private HashMap<String, Object> segments;
 
     @SuppressWarnings("ResourceType")
     @Override
@@ -185,12 +186,26 @@ public class MainActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                Map<String, String> param = new HashMap<>();
+                Map<String, String> stringSegments = new HashMap<>();
+                Map<String, Integer> intSegments = new HashMap<>();
+                Map<String, Boolean> boolSegments = new HashMap<>();
+                Map<String, Date> dateSegments = new HashMap<>();
+
                 for (String key : segments.keySet()) {
-                    param.put(key, segments.get(key));
+                    Object value = segments.get(key);
+                    if (value instanceof String) {
+                        stringSegments.put(key, (String)value);
+                    } else if (value instanceof Integer) {
+                        intSegments.put(key, (Integer)value);
+                    } else if (value instanceof Boolean) {
+                        boolSegments.put(key, (Boolean) value);
+
+                    }
                 }
-                System.out.println("********* / " + segments);
-                RichFlyer.registerSegments(param, getApplicationContext(), new RichFlyerResultListener() {
+                dateSegments.put("registeredDate", new Date());
+
+                RichFlyer.registerSegments(stringSegments, intSegments, boolSegments, dateSegments,
+                        getApplicationContext(), new RichFlyerResultListener() {
                     @Override
                     public void onCompleted(RFResult result) {
                         if (result.isResult()) {
@@ -245,7 +260,18 @@ public class MainActivity extends AppCompatActivity {
     private void onSpinnerClick(String key, View parent) {
         Spinner spinner = (Spinner) parent;
         String value = spinner.getSelectedItem().toString();
-        segments.put(key, value);
+
+        try {
+            segments.put(key, Integer.parseInt(value));
+        } catch (NumberFormatException e) {
+            if (value.equals("YES")) {
+                segments.put(key, new Boolean(true));
+            } else if (value.equals("NO")) {
+                segments.put(key, new Boolean(false));
+            } else {
+                segments.put(key, value);
+            }
+        }
     }
 
     @SuppressLint("WrongConstant")

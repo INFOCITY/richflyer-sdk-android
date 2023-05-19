@@ -6,8 +6,8 @@
 
     <string name="spinner_text_genre">該当ジャンルの本を最も多く所有しているユーザ</string>
     <string name="spinner_text_day">起動が多い曜日</string>
-    <string name="spinner_text_launch_count">起動回数</string>
-    <string name="spinner_text_daytime">起動の多い時間帯</string>
+    <string name="spinner_text_age">年齢</string>
+    <string name="spinner_text_registered">登録状況</string>
 
     <string-array name="spinner_list_genre">
         <item>comic</item>
@@ -24,17 +24,21 @@
         <item>土</item>
         <item>日</item>
     </string-array>
-    <string-array name="spinner_list_launch_count">
-        <item>0-100</item>
-        <item>101-1000</item>
-        <item>1001-5000</item>
-        <item>5001-10000</item>
+    <string-array name="spinner_list_age">
+        <item>0</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
     </string-array>
-    <string-array name="spinner_list_daytime">
-        <item>朝</item>
-        <item>昼</item>
-        <item>晩</item>
-        <item>深夜</item>
+    <string-array name="spinner_list_registered">
+        <item>YES</item>
+        <item>NO</item>
     </string-array>
 
     <string name="event_title_open_store">ストアを開く</string>
