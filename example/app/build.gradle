@@ -58,7 +58,7 @@ dependencies {
 
     implementation platform('com.google.firebase:firebase-bom:30.1.0')
     implementation 'com.google.firebase:firebase-messaging'
-    implementation 'jp.co.infocity:RichFlyer:1.5.3'
+    implementation 'jp.co.infocity:RichFlyer:1.5.4'
 
 }
 
