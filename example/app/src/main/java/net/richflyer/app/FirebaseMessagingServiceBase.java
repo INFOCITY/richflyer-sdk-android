@@ -28,7 +28,7 @@ public class FirebaseMessagingServiceBase extends FirebaseMessagingService {
         Map<String, String> data = remoteMessage.getData();
 
         // 通知ドロワーに表示
-        RFSendPushInformation spi = new RFSendPushInformation(this, R.mipmap.ic_launcher);
+        RFSendPushInformation spi = new RFSendPushInformation(this, R.mipmap.ic_notification);
         spi.setPushData(remoteMessage.getData());
     }
 

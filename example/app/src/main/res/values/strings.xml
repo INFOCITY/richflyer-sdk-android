@@ -6,16 +6,30 @@
 
     <string name="spinner_text_genre">該当ジャンルの本を最も多く所有しているユーザ</string>
     <string name="spinner_text_day">起動が多い曜日</string>
-    <string name="spinner_text_age">年齢</string>
-    <string name="spinner_text_registered">登録状況</string>
+    <string name="spinner_text_launch_count">起動回数</string>
+    <string name="spinner_text_daytime">起動の多い時間帯</string>
 
-    <string-array name="spinner_list_genre">
+    <string name="segment_title1">ジャンル</string>
+    <string name="segment_title2">曜日</string>
+    <string name="segment_title3">年齢</string>
+    <string name="segment_title4">登録状況</string>
+    <string name="segment_title5">誕生日</string>
+    <string name="segment_title6">インストール日</string>
+
+    <string name="segment_name1">genre</string>
+    <string name="segment_name2">day</string>
+    <string name="segment_name3">age</string>
+    <string name="segment_name4">registered</string>
+    <string name="segment_name5">birthday</string>
+    <string name="segment_name6">installedDate</string>
+
+    <string-array name="segment_list1">
         <item>comic</item>
         <item>magazine</item>
         <item>novel</item>
     </string-array>
 
-    <string-array name="spinner_list_day">
+    <string-array name="segment_list2">
         <item>月</item>
         <item>火</item>
         <item>水</item>
@@ -24,7 +38,8 @@
         <item>土</item>
         <item>日</item>
     </string-array>
-    <string-array name="spinner_list_age">
+
+    <string-array name="segment_list3">
         <item>0</item>
         <item>10</item>
         <item>20</item>
@@ -35,17 +50,35 @@
         <item>70</item>
         <item>80</item>
         <item>90</item>
+        <item>100</item>
     </string-array>
-    <string-array name="spinner_list_registered">
-        <item>YES</item>
-        <item>NO</item>
+
+    <string-array name="segment_list4">
+        <item>true</item>
+        <item>false</item>
     </string-array>
+
+    <string name="event_title">イベント名</string>
+    <string name="event_variable_title">変数</string>
+    <string name="event_standby_title">待機時間</string>
+
+    <string name="event_placeholder1">event1</string>
+    <string name="event_placeholder2">event2</string>
+    <string name="event_placeholder3">event3</string>
+
+    <string name="event_variable_name">名前</string>
+    <string name="event_variable_value">値</string>
+    <string name="event_standby_placeholder">分</string>
+
+    <string name="event_postmessage">送信</string>
+    <string name="event_cancelmessage">配信停止</string>
 
     <string name="event_title_open_store">ストアを開く</string>
     <string name="event_title_open_recommend">オススメ画面を開く</string>
     <string name="event_title_add_wish_list">ほしいものリスト追加</string>
     <string name="event_title_add_cart">カート追加</string>
     <string name="event_title_purchase">購入</string>
+    <string name="event_title_segment">セグメント取得</string>
 
     <string name="notification_title_open_store">ストアを開く</string>
     <string name="notification_title_open_recommend">オススメ画面を開く</string>

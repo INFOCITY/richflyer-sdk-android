@@ -2,27 +2,17 @@ apply plugin: 'com.android.application'
 
 android {
 
-    compileSdkVersion 33
-    buildToolsVersion '30.0.3'
+    compileSdkVersion 34
 
-    java {
-        toolchain {
-            languageVersion = JavaLanguageVersion.of(11)
-        }
-    }
-
-    android {
-        sourceSets {
-            main {
-                jniLibs.srcDirs = ['libs']
-            }
-        }
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     defaultConfig {
         applicationId "net.richflyer.app"
         minSdkVersion 23
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -33,6 +23,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src/main/assets'
+            }
+        }
+    }
 }
 
 repositories {
@@ -41,25 +38,31 @@ repositories {
 }
 
 configurations {
-    stagingDebugCompile
-    stagingReleaseCompile
-    productionDebugCompile
-    productionReleaseCompile
+    stagingDebugImplementation
+    stagingReleaseImplementation
+    productionDebugImplementation
+    productionReleaseImplementation
 }
 
 dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation fileTree(include: '*.jar', exclude: 'annotations.jar', dir: 'libs')
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
 
     implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'jp.co.infocity:RichFlyer:1.6.0'
 
     implementation platform('com.google.firebase:firebase-bom:30.1.0')
     implementation 'com.google.firebase:firebase-messaging'
-    implementation 'jp.co.infocity:RichFlyer:1.5.4'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+}
 
+repositories{
+    flatDir{
+        dirs 'libs'
+    }
 }
 
 apply plugin: 'com.google.gms.google-services'
